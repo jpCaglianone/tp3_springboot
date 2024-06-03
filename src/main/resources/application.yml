@@ -1,0 +1,35 @@
+# Configurações do H2 Database
+spring:
+datasource:
+url: jdbc:h2:mem:testdb
+driver-class-name: org.h2.Driver
+username: sa
+password: password
+jpa:
+database-platform: org.hibernate.dialect.H2Dialect
+h2:
+console:
+enabled: true
+
+# Configurações do MongoDB
+data:
+mongodb:
+uri: mongodb://localhost:27017/springbootdb
+
+# Configurações do Redis
+redis:
+host: localhost
+port: 6379
+
+# Configurações do Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    enable:
+      all: true
